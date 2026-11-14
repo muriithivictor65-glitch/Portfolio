@@ -1,0 +1,290 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mumbi Victor Muriithi – Frontend developer and project coordinator</title>
+<meta name="description" content="Portfolio of Mumbi Victor Muriithi: frontend web development, IT support and project coordination, Njoro, Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F8FAFC;--surface:#FFFFFF;--text:#101827;--muted:#55627A;--line:#D8DEE9;
+  --accent:#F59E0B;--accent-ink:#B45309;--on-accent:#101827;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101827;--surface:#182234;--text:#F8FAFC;--muted:#9AA7BA;--line:#2A3650;--accent-ink:#F59E0B;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101827;--surface:#182234;--text:#F8FAFC;--muted:#9AA7BA;--line:#2A3650;--accent-ink:#F59E0B;color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.05rem/1.65 var(--body)}
+a{color:var(--accent-ink);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.5rem)}
+header .wrap{display:flex;flex-wrap:wrap;gap:.6rem 2rem;align-items:center;justify-content:space-between;padding-top:1.4rem}
+.brand{font:700 1.05rem var(--head);color:var(--text);text-decoration:none;letter-spacing:.01em}
+nav{display:flex;flex-wrap:wrap;gap:.3rem 1.4rem}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--text)}
+h1,h2,h3{font-family:var(--head);margin:0;line-height:1.1}
+h1{font-size:clamp(2.5rem,7.4vw,4.8rem);font-weight:700;letter-spacing:-.035em;max-width:14ch}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);letter-spacing:-.02em;font-weight:700}
+h3{font-size:1.3rem;font-weight:700;letter-spacing:-.01em}
+.hero{padding:clamp(3rem,9vw,6.5rem) 0 clamp(2.5rem,6vw,4rem)}
+.hero .name{margin:0 0 1.2rem;color:var(--muted);font-weight:500}
+.hero p.lead{max-width:56ch;margin:1.6rem 0 0;font-size:1.15rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.btn{display:inline-block;padding:.8rem 1.3rem;border-radius:8px;font-weight:600;text-decoration:none;border:2px solid var(--accent);transition:transform .15s}
+.btn.primary{background:var(--accent);color:var(--on-accent)}
+.btn.ghost{color:var(--text)}
+.btn:hover{transform:translateY(-2px)}
+.facts{display:flex;flex-wrap:wrap;gap:.4rem 2rem;margin:2.4rem 0 0;padding:1.1rem 0 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem;list-style:none}
+.facts b{color:var(--text);font-weight:600}
+section{padding:clamp(2.6rem,6vw,4.2rem) 0;border-top:1px solid var(--line)}
+section>.wrap>h2{margin-bottom:1.8rem}
+.about p{max-width:64ch;margin:0 0 1rem}
+.proj{display:grid;gap:1.2rem 3rem;grid-template-columns:1fr;padding:0 0 2.4rem}
+.proj+.proj{padding-top:2.4rem;border-top:1px dashed var(--line)}
+.stack{color:var(--accent-ink);font-weight:600;font-size:.95rem;margin:.3rem 0 0}
+.proj p{margin:0 0 .8rem;max-width:62ch}
+.proj strong{font-weight:600}
+@media(min-width:860px){.proj{grid-template-columns:.8fr 1.2fr}}
+.demo{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:1.2rem;margin-top:.4rem}
+.demo-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.4rem 1rem;font-size:.88rem;color:var(--muted);margin-bottom:.9rem}
+.demo input{width:100%;padding:.65rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--text);font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.8rem 0}
+.chips button{font:500 .9rem var(--body);padding:.4rem .85rem;border-radius:99px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:.4rem 0 1rem}
+.bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .4s ease}
+.ms{list-style:none;margin:0;padding:0}
+.ms li{display:flex;justify-content:space-between;gap:1rem;padding:.6rem 0;border-top:1px solid var(--line);font-size:.97rem}
+.ms small{color:var(--muted);white-space:nowrap}
+.ms .st{font-weight:600}
+.ms .Done .st{color:var(--accent-ink)}
+.rows{display:grid;gap:0}
+.row{display:grid;gap:.3rem 2rem;padding:1.1rem 0;border-top:1px solid var(--line)}
+.row:first-child{border-top:0;padding-top:0}
+.row dt{font-weight:600}
+.row dd{margin:0;color:var(--muted)}
+@media(min-width:760px){.row{grid-template-columns:15rem 1fr}}
+.job{border-left:3px solid var(--accent);padding:0 0 0 1.2rem;margin:0 0 2rem}
+.job p.role{margin:.2rem 0 .6rem;color:var(--muted)}
+.job ul,.plain{margin:0;padding-left:1.1rem;max-width:66ch}
+.job li,.plain li{margin:0 0 .45rem}
+.edu{display:grid;gap:2.2rem;grid-template-columns:1fr}
+@media(min-width:760px){.edu{grid-template-columns:1fr 1fr}}
+.edu p{margin:.3rem 0;color:var(--muted)}
+.contact p{max-width:58ch;margin:0 0 1.4rem}
+.contact .links{display:flex;flex-wrap:wrap;gap:.8rem}
+footer{padding:2rem 0 2.6rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.bar i{transition:none}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="#top">RITCA VCODING</a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+ 
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <p class="name">Mumbi Victor Muriithi</p>
+      <h1>I scope the project, then I build it.</h1>
+      <p class="lead">I’m a frontend developer and student project coordinator. I build responsive websites with HTML, CSS and JavaScript, and I plan the work with the same care: goals, milestones, budget and clear updates for the client.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:victormuriithi136@gmail.com">Email me</a>
+        <a class="btn ghost" href="#demo">Try the project tracker</a>
+      </div>
+      <ul class="facts">
+        <li><b>Based in</b> Nakuru/Njoro, Kenya</li>
+        <li><b>Studying</b> BSc. Community Education and Project Management, Egerton University</li>
+        <li><b>Graduating</b> 2028</li>
+      </ul>
+    </div>
+  </div>
+ 
+  <section class="about" aria-labelledby="about-h">
+    <div class="wrap">
+      <h2 id="about-h">About me</h2>
+      <p>My degree teaches me how to plan, resource and evaluate projects. My practice teaches me how to ship them. I put the two together: I scope the work, build the frontend, and keep the people who depend on it informed.</p>
+      <p>Beyond web development I have a grounding in network engineering fundamentals and IT support, and I am learning Linux and cybersecurity next.</p>
+    </div>
+  </section>
+ 
+  <section id="projects" aria-labelledby="proj-h">
+    <div class="wrap">
+      <h2 id="proj-h">Projects</h2>
+ 
+      <article class="proj">
+        <div>
+          <h3>Community Project Tracker</h3>
+          <p class="stack">HTML, CSS, JavaScript</p>
+        </div>
+        <div>
+          <p><strong>The need.</strong> Community organizers need a simple way to see their goals, timelines and milestones in one place.</p>
+          <p><strong>What I built.</strong> A frontend app that applies project management methods to that need, with live search and status filters written in JavaScript.</p>
+          <div class="demo" id="demo">
+            <div class="demo-top"><span>Interactive demo</span><span>Sample data, not a real project</span></div>
+            <label for="q" style="position:absolute;left:-9999px">Search milestones</label>
+            <input id="q" type="search" placeholder="Search milestones" autocomplete="off">
+            <div class="chips" role="group" aria-label="Filter by status">
+              <button type="button" aria-pressed="true" data-s="All">All</button>
+              <button type="button" aria-pressed="false" data-s="Planned">Planned</button>
+              <button type="button" aria-pressed="false" data-s="In progress">In progress</button>
+              <button type="button" aria-pressed="false" data-s="Done">Done</button>
+            </div>
+            <div class="bar" aria-hidden="true"><i id="fill"></i></div>
+            <ul class="ms" id="list"></ul>
+            <p id="count" aria-live="polite" style="margin:.8rem 0 0;font-size:.88rem;color:var(--muted)"></p>
+          </div>
+        </div>
+      </article>
+ 
+      <article class="proj">
+        <div>
+          <h3>Frontend web portfolio and project showcase</h3>
+          <p class="stack">HTML, CSS, JavaScript</p>
+        </div>
+        <div>
+          <p><strong>The need.</strong> A single place to present my web projects and technical skills to clients and employers.</p>
+          <p><strong>What I built.</strong> A responsive, interactive personal site. Layouts use CSS Grid and Flexbox so the same pages read well on a phone and on a desktop.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+ 
+  <section id="skills" aria-labelledby="skills-h">
+    <div class="wrap">
+      <h2 id="skills-h">Skills</h2>
+      <dl class="rows">
+        <div class="row"><dt>Frontend development</dt><dd>HTML5, CSS3, JavaScript (ES6), responsive web design, VS Code, Git and GitHub</dd></div>
+        <div class="row"><dt>Networking and IT support</dt><dd>Network engineering fundamentals, TCP/IP, routing and switching, hardware and software troubleshooting, helpdesk basics</dd></div>
+        <div class="row"><dt>Project management</dt><dd>Planning and scoping, milestone and budget tracking, risk assessment, monitoring and evaluation, Agile methodology, Excel</dd></div>
+        <div class="row"><dt>Working with people</dt><dd>Client communication, community engagement, cross-functional teamwork, leading peer groups</dd></div>
+        <div class="row"><dt>Learning now</dt><dd>Linux and cybersecurity</dd></div>
+      </dl>
+    </div>
+  </section>
+ 
+  <section id="experience" aria-labelledby="exp-h">
+    <div class="wrap">
+      <h2 id="exp-h">Experience</h2>
+      <div class="job">
+        <h3>Freelance / Independent Developer</h3>
+        <p class="role">Frontend web designer and IT consultant, remote</p>
+        <ul>
+          <li>Built and customized responsive websites for local small businesses and student organizations using clean HTML, CSS and JavaScript.</li>
+          <li>Gave remote IT support and set up basic networks, fixing hardware and connectivity problems for clients.</li>
+          <li>Tracked milestones and budget timelines with project management frameworks, and kept clients informed at each step.</li>
+        </ul>
+      </div>
+      <div class="job">
+        <h3>Egerton University Community Projects</h3>
+        <p class="role">Student project coordinator, Njoro, Kenya</p>
+        <ul>
+          <li>Led peer groups in designing educational outreach models and project proposals for local community initiatives.</li>
+          <li>Organized tasks, scheduled resources and carried out risk assessments during project simulations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="education" aria-labelledby="edu-h">
+    <div class="wrap">
+      <h2 id="edu-h">Education and certifications</h2>
+      <div class="edu">
+        <div>
+          <h3>Egerton University</h3>
+          <p>BSc. in Community Education and Project Management, Njoro, Kenya. Expected graduation 2028.</p>
+          <p>Coursework: Project Planning and Implementation, Community Resource Management, Monitoring and Evaluation, Strategic Leadership.</p>
+        </div>
+        <div>
+          <h3>Certifications</h3>
+          <ul class="plain">
+            <li>Network Engineering Fundamentals, Alison Learning</li>
+            <li>Basics of IT Support, online learning</li>
+            <li>Frontend Web Development Foundations, self-paced online learning</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Let’s talk about your project or role</h2>
+      <p>I’m open to internships, attachments and entry-level roles in web development, IT support and project coordination. I’m also available for small website projects. Email is the fastest way to reach me.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:victormuriithi136@gmail.com">victormuriithi136@gmail.com</a>
+        <a class="btn ghost" href="tel:+254757797715">+254 757 797 715</a>
+      </div>
+    </div>
+  </section>
+</main>
+ 
+<footer>
+  <div class="wrap">Mumbi Victor Muriithi, Nakuru/Njoro, Kenya. References available on request.</div>
+</footer>
+ 
+<script>
+(function(){
+  var data=[
+    {t:"Community needs assessment",s:"Done",d:"Week 1"},
+    {t:"Draft project proposal",s:"Done",d:"Week 2"},
+    {t:"Budget and resource plan",s:"In progress",d:"Week 3"},
+    {t:"Volunteer training",s:"In progress",d:"Week 4"},
+    {t:"Pilot outreach session",s:"Planned",d:"Week 6"},
+    {t:"Risk review",s:"Planned",d:"Week 7"},
+    {t:"Monitoring and evaluation report",s:"Planned",d:"Week 9"}
+  ];
+  var status="All",q="";
+  var list=document.getElementById("list"),count=document.getElementById("count"),fill=document.getElementById("fill");
+  var done=data.filter(function(x){return x.s==="Done"}).length;
+  fill.style.width=Math.round(done/data.length*100)+"%";
+  function render(){
+    var rows=data.filter(function(x){
+      return (status==="All"||x.s===status)&&x.t.toLowerCase().indexOf(q)!==-1;
+    });
+    list.textContent="";
+    rows.forEach(function(x){
+      var li=document.createElement("li");li.className=x.s;
+      var a=document.createElement("span");a.textContent=x.t+" ";
+      var st=document.createElement("span");st.className="st";st.textContent="("+x.s+")";
+      a.appendChild(st);
+      var b=document.createElement("small");b.textContent=x.d;
+      li.appendChild(a);li.appendChild(b);list.appendChild(li);
+    });
+    count.textContent=rows.length?("Showing "+rows.length+" of "+data.length+" milestones. "+done+" of "+data.length+" are done."):"No milestones match. Clear the search or pick another status.";
+  }
+  document.getElementById("q").addEventListener("input",function(e){q=e.target.value.trim().toLowerCase();render()});
+  document.querySelectorAll(".chips button").forEach(function(btn){
+    btn.addEventListener("click",function(){
+      status=btn.getAttribute("data-s");
+      document.querySelectorAll(".chips button").forEach(function(o){o.setAttribute("aria-pressed",o===btn?"true":"false")});
+      render();
+    });
+  });
+  render();
+})();
+</script>
+</body>
+</html>
+ 
